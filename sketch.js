@@ -56,7 +56,7 @@ var rawData = serial.readStringUntil('\r\n'); //read the incoming string until i
     }
 }
 function draw() {
-    var a = ardVal();
+    var a = ardVal[0];
     if (a < 300)
     { document.getElementById("loc").innerHTML = Location[1], 12, 200, 2400, 1000; }
     else if(a < 600)
