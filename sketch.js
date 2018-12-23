@@ -42,18 +42,7 @@ function setup() {
 //slider= createSlider (0, 1023, 1023);
 //slider.position (390, 530);
 }   
-function draw() {
-    var a = ardVal();
-    if (a < 300)
-    { document.getElementById("loc").innerHTML = Location[1], 12, 200, 2400, 1000; }
-    else if(a < 600)
-        {
-        document.getElementById("loc").innerHTML = Location[0], 12, 200, 2400, 1000; 
-    }
-    else { document.getElementById("loc").innerHTML = Location[2], 12, 200, 2400, 1000; }
-    //text (a, 12, 200, 2400, 1000);
-//text (Location[1], 12, 200, 240, 100);
-}
+
     function dataReceived()   //this function is called every time data is received
 {
 var rawData = serial.readStringUntil('\r\n'); //read the incoming string until it sees a newline
@@ -65,6 +54,18 @@ var rawData = serial.readStringUntil('\r\n'); //read the incoming string until i
       ardVal[i]=parseInt(incoming[i]);        //convert the values to ints and put them into the ardVal array
       }
     }
+}
+function draw() {
+    var a = ardVal();
+    if (a < 300)
+    { document.getElementById("loc").innerHTML = Location[1], 12, 200, 2400, 1000; }
+    else if(a < 600)
+        {
+        document.getElementById("loc").innerHTML = Location[0], 12, 200, 2400, 1000; 
+    }
+    else { document.getElementById("loc").innerHTML = Location[2], 12, 200, 2400, 1000; }
+    //text (a, 12, 200, 2400, 1000);
+//text (Location[1], 12, 200, 240, 100);
 }
 
 function ardCon()
